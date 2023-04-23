@@ -77,12 +77,12 @@ Firefox: https://addons.mozilla.org/en-US/firefox/addon/gnome-shell-integration/
 #### Enabling battery percentage
 `Settings` > `Power` > **Show Battery Percentage=True**
 #### Configuring Blur my Shell
-`Extension List` > `Blur my Shell Settings` > **Sigma=10, Brightness=0.65,Color and noise effects=True, Panel blur=True, Static blur=True, Disable when a window is near=True, Background blue=True, Overview components style=Transparent, Application folder blur=True, Dash to Dock blur=False, Application blur=False, Lockscreen blur=True**
+`Extension List` > `Blur my Shell Settings` > **Sigma=10, Brightness=0.65,Color and noise effects=True, Panel blur=True, Static blur=True, Disable when a window is near=True, Background blur=True, Overview components style=Transparent, Application folder blur=True, Dash to Dock blur=False, Application blur=False, Lockscreen blur=True**
 #### Configuring Dash to Dock
-`Extension List` > `Dash to Dock Settings` > **Show on all monitors=True, Intelligent autohide=True, Show trashcan=False, Show overview on startup=False, Customize the dash color=True:black, Customize opacity=Fixed:75%**
+`Extension List` > `Dash to Dock Settings` > **Show on all monitors=True, Intelligent autohide=True, Show trashcan=False, Show overview on startup=False, Customize the dash color=True:black, Customize opacity=Fixed:70%**
 #### Configuring Vitals
-`Extension List` > `Vitals Settings` > **Position in panel=Center, Use higher precision=True**
-`Vitals Extension` > Add **CPU: Usage, Frequency | Memory: Usage, Free | Storage: Free | Network: Public IP, Device rx**
+`Extension List` > `Vitals Settings` > **Position in panel=Center, Use higher precision=True**\
+`Vitals Extension` > Add **Processor: Usage, Frequency | Memory: Usage, Free | Storage: Free | Network: Public IP, Device rx**
 ### Get Wallpapers
 ```
 cd /tmp
@@ -96,8 +96,14 @@ plymouth-set-default-theme -l
 sudo plymouth-set-default-theme -R bgrt
 ```
 ### Hide GRUB at boot (only when single booting) (/etc/default/grub)
+##### Replace
 ```
 GRUB_TIMEOUT=0
+```
+##### Add
+```
+GRUB_TIMEOUT_STYLE=hidden
+GRUB_DISABLE_OS_PROBER=true
 ```
 UEFI GRUB Rebuild
 ```
@@ -112,7 +118,7 @@ Do this all in `/tmp`
 #### Primary Font
 ```
 sudo mkdir /usr/share/fonts/Poppins
-wget https://fonts.google.com/download?family=Poppins
+wget -o Poppins.zip https://fonts.google.com/download?family=Poppins
 sudo unzip Poppins.zip -d /usr/share/fonts/Poppins
 sudo fc-cache -fv
 ```
