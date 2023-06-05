@@ -26,7 +26,7 @@ sudo dnf remove gnome-tour
 ### Installing Extra Dependencies
 ```
 sudo dnf group install "Hardware Support"
-sudo dnf install git make vim nano wget
+sudo dnf install git make vim nano wget tar
 ```
 
 
